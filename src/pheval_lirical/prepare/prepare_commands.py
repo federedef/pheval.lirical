@@ -226,9 +226,9 @@ class CommandWriter:
         """Write Exomiser data location, dealing with deprecated parameters."""
         if version.parse(self.version) > version.parse("2.0.0-RC1"):
             if command_arguments.exomiser_hg19_data_path is not None:
-                self.file.write(" -e19 " + str(command_arguments.exomiser_hg19_data_path))
+                self.file.write(" -ed19 " + str(command_arguments.exomiser_hg19_data_path))
             if command_arguments.exomiser_hg38_data_path is not None:
-                self.file.write(" -e38 " + str(command_arguments.exomiser_hg38_data_path))
+                self.file.write(" -ed38 " + str(command_arguments.exomiser_hg38_data_path))
         if version.parse(self.version) < version.parse("2.0.0-RC2"):
             self.file.write(" --exomiser " + str(command_arguments.exomiser_data))
 
